@@ -76,3 +76,7 @@ Table conversation.conversation{
   id INT [PRIMARY KEY, INCREMENT, NOT NULL]
 }
 ```
+
+# Designing MVP
+
+<img src="./assets/prototype1.png"/>
