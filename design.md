@@ -1,4 +1,4 @@
-# Tables
+# All Tables
 
 ```SQL
 Project MVP_TELESYNC{
