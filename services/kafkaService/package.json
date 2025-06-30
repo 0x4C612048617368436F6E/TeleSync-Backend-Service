@@ -4,7 +4,7 @@
   "description": "Version 1.0.0 of TeleSync",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon ./build/src/kafkaInstance.js"
   },
   "type": "commonjs",
   "repository": {
@@ -19,7 +19,12 @@
   "homepage": "https://github.com/0x4C612048617368436F6E/TeleSync#readme",
   "devDependencies": {
     "@types/express": "^5.0.3",
-    "@types/node": "^24.0.4",
+    "@types/node": "^24.0.7",
+    "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "kafkajs": "^2.2.4"
   }
 }

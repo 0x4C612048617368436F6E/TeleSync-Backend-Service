@@ -1,6 +1,6 @@
 abstract class baseLogger {
-  public abstract genLog(): string;
-  public abstract genJSONLog(): string;
+  public abstract genLog(): void;
+  public abstract genJSONLog(): void;
   /**
    * Output can either be file or console
    */

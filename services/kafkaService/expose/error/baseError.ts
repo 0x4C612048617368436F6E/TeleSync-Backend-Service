@@ -22,3 +22,19 @@ export class responseObjectEmpty extends baseError {
     this.message = "Can not have an empty Response Object";
   }
 }
+
+export class kafkaError extends baseError {
+  constructor(err: any) {
+    super();
+    this.name = "Kafka connection error";
+    this.message = `An error occured while trying to connect to broker ${err}`;
+  }
+}
+
+export class kafkaTopicAlreadyExistError extends baseError {
+  constructor() {
+    super();
+    this.name = "Kafka Topic Already Exist";
+    this.message = `An error occured while trying to create Topic`;
+  }
+}
