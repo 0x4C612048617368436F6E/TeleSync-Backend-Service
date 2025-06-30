@@ -18,7 +18,7 @@ class fileLogger extends baseLogger {
     reqObj: requestObject = {},
     resObj: responeObject = {},
     duration: number = 0,
-    noReqOrRes: string,
+    noReqOrRes: string = "",
     normalOrJson: boolean = true,
     ...args: string[]
   ) {
@@ -47,7 +47,7 @@ class fileLogger extends baseLogger {
       console.log("Done");
     }
     let timeStamp = new Date().toString();
-    if (this.args.length > 0) {
+    if (this.args.length === 0) {
       if (
         this.reqObj?.user?.firstname != undefined ||
         this.reqObj?.user?.lastname

@@ -1,6 +1,7 @@
 import { Kafka } from "kafkajs";
 import fileLogger from "../expose/logger/fileLogger";
 import consoleLogger from "../expose/logger/consoleLogger";
+import loggerLevel from "../expose/logger/loggerLevels";
 const unusedObject = Object.assign({}, {});
 const kafkaOptions = {
   clientId: "TeleSync",
@@ -12,6 +13,7 @@ const consoleLoggerInstance1 = new consoleLogger(
   0,
   "Connecting to broker",
   true,
+  loggerLevel.info,
   "No request",
   "No response"
 );

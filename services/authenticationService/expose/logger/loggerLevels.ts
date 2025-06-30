@@ -1,8 +1,8 @@
 //define logger enum
 enum loggerLevel {
-  info = 0,
-  warning,
-  error,
+  info = "INFO",
+  warning = "WARNING",
+  error = "ERROR",
 }
 
 export default loggerLevel;

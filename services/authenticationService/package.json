@@ -1,0 +1,28 @@
+{
+  "name": "authenticationservice",
+  "version": "1.0.0",
+  "description": "Authentication service for TeleSync",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0x4C612048617368436F6E/TeleSync-Backend-Service.git"
+  },
+  "keywords": [
+    "Authentication",
+    "Login",
+    "Registration",
+    "JWT"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/0x4C612048617368436F6E/TeleSync-Backend-Service/issues"
+  },
+  "homepage": "https://github.com/0x4C612048617368436F6E/TeleSync-Backend-Service#readme",
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}
