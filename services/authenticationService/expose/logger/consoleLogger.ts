@@ -23,7 +23,7 @@ class consoleLogger extends baseLogger {
     super();
     this.reqObj = reqObj;
     this.resObj = resObj;
-    this.duration = duration;
+    this.duration = this.resObj.totals_duration as unknown as number;
     this.args = args;
     this.noReqOrRes = noReqOrRes as unknown as string | null;
     this.normalOrJson = normalOrJson;
@@ -54,11 +54,11 @@ class consoleLogger extends baseLogger {
         this.reqObj?.user?.lastname
       ) {
         this.reqObj.level = this.level as unknown as string | undefined;
-        this.logMessage = `[${this.reqObj?.level}] HTTP REQUEST - { method: ${this.reqObj?.method}, url: ${this.reqObj?.url}, header: [${this.reqObj?.header?.domain} ${this.reqObj?.header?.host} ${this.reqObj?.header?.raw_header}] status: ${this.resObj?.statusCode} } status_message: ${this.reqObj?.message} user: ${this.reqObj?.user} response_header: ${this.resObj?.header} timestamp: ${timeStamp} duration: ${this.duration}\n`;
+        this.logMessage = `[${this.reqObj?.level}] HTTP REQUEST - { method: ${this.reqObj?.method}, url: ${this.reqObj?.url}, header: [${this.reqObj?.header?.host}, ${this.reqObj?.header?.raw_header}]}\nHTTP RESPONSE status: ${this.resObj?.statusCode}, status_message: ${this.reqObj?.message}, timestamp: ${timeStamp}, duration: ${this.duration} milliseconds`;
       } else {
         if (this.reqObj) {
           this.reqObj.level = this.level as unknown as string | undefined;
-          this.logMessage = `level:[${this.reqObj?.level}] HTTP REQUEST - { method: ${this.reqObj?.method}, url: ${this.reqObj?.url}, header: [${this.reqObj?.header?.domain} ${this.reqObj?.header?.host} ${this.reqObj?.header?.raw_header}] status: ${this.resObj?.statusCode} } status_message: ${this.reqObj?.message} response_header: ${this.resObj?.header} timestamp: ${timeStamp} duration: ${this.duration}\n`;
+          this.logMessage = `[${this.reqObj?.level}] HTTP REQUEST - { method: ${this.reqObj?.method}, url: ${this.reqObj?.url}, header: [${this.reqObj?.header?.host}, ${this.reqObj?.header?.raw_header}]}\nHTTP RESPONSE status: ${this.resObj?.statusCode}, status_message: ${this.reqObj?.message}, timestamp: ${timeStamp}, duration: ${this.duration} milliseconds`;
         }
       }
     } else {
@@ -88,9 +88,9 @@ class consoleLogger extends baseLogger {
         this.reqObj?.user?.firstname != undefined ||
         this.reqObj?.user?.lastname
       ) {
-        this.logMessage = `[${this.reqObj?.level}] HTTP REQUEST - { method: ${this.reqObj?.method}, url: ${this.reqObj?.url}, header: [${this.reqObj?.header?.domain} ${this.reqObj?.header?.host} ${this.reqObj?.header?.raw_header}] status: ${this.resObj?.statusCode} } status_message: ${this.reqObj?.message} user: ${this.reqObj?.user} response_header: ${this.resObj?.header} timestamp: ${timeStamp} duration: ${this.duration}`;
+        this.logMessage = `[${this.reqObj?.level}] HTTP REQUEST - { method: ${this.reqObj?.method}, url: ${this.reqObj?.url}, header: [${this.reqObj?.header?.host}, ${this.reqObj?.header?.raw_header}]}\nHTTP RESPONSE status: ${this.resObj?.statusCode}, status_message: ${this.reqObj?.message}, timestamp: ${timeStamp}, duration: ${this.duration} milliseconds`;
       } else {
-        this.logMessage = `[${this.reqObj?.level}] HTTP REQUEST - { method: ${this.reqObj?.method}, url: ${this.reqObj?.url}, header: [${this.reqObj?.header?.domain} ${this.reqObj?.header?.host} ${this.reqObj?.header?.raw_header}] status: ${this.resObj?.statusCode} } status_message: ${this.reqObj?.message} response_header: ${this.resObj?.header} timestamp: ${timeStamp} duration: ${this.duration}`;
+        this.logMessage = `[${this.reqObj?.level}] HTTP REQUEST - { method: ${this.reqObj?.method}, url: ${this.reqObj?.url}, header: [${this.reqObj?.header?.host}, ${this.reqObj?.header?.raw_header}]}\nHTTP RESPONSE status: ${this.resObj?.statusCode}, status_message: ${this.reqObj?.message}, timestamp: ${timeStamp}, duration: ${this.duration} milliseconds`;
       }
     } else {
       this.logMessage = Object.assign(

@@ -5,14 +5,13 @@ interface user {
   lastname?: string;
 }
 
-interface headerRequest {
+export interface headerRequest {
   host?: string;
-  domain?: string;
   raw_header?: string[];
 }
 
-interface headerResponse {
-  "x-powered-by"?: string;
+export interface headerResponse {
+  "x-powered-by"?: string; //how to extract
 }
 
 export interface requestObject {
