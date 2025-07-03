@@ -54,7 +54,7 @@ class consoleLogger extends baseLogger {
         this.reqObj?.user?.lastname
       ) {
         this.reqObj.level = this.level as unknown as string | undefined;
-        this.logMessage = `[${this.reqObj?.level}] HTTP REQUEST - { method: ${this.reqObj?.method}, url: ${this.reqObj?.url}, header: [${this.reqObj?.header?.host}, ${this.reqObj?.header?.raw_header}]}\nHTTP RESPONSE status: ${this.resObj?.statusCode}, status_message: ${this.reqObj?.message}, timestamp: ${timeStamp}, duration: ${this.duration} milliseconds`;
+        this.logMessage = `[${this.reqObj?.level}] HTTP REQUEST - { method: ${this.reqObj?.method}, url: ${this.reqObj?.url}, header: [${this.reqObj?.header?.host}, ${this.reqObj?.header?.raw_header}]}\n[${this.reqObj?.level}] HTTP RESPONSE status: ${this.resObj?.statusCode}, status_message: ${this.reqObj?.message}, timestamp: ${timeStamp}, duration: ${this.duration} milliseconds`;
       } else {
         if (this.reqObj) {
           this.reqObj.level = this.level as unknown as string | undefined;
